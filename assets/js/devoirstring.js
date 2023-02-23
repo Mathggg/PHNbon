@@ -1,0 +1,35 @@
+// exercice 1
+function prenom() {
+    // on récupère le prénom on le met dans l'élément avec id holder1
+	// compléter le code ici
+	
+	document.getElementById("holder1").innerHTML = document.getElementById("prenom").value;
+	// <script></script>   permet de dire qu on introduit du java 
+	
+}
+
+function nomdefamille() {
+    // on récupère le nom on le met dans l'élément avec id holder1
+    // compléter le code ici
+	document.getElementById("holder1").innerHTML = document.getElementById("nomdefamille").value;
+}
+
+function nomcomplet() {
+    // on concatène prénom et nom pour afficher le nom entier et on met le résultat dans l'élément avec id holder1
+    // compléter le code ici
+	 let text1 = document.getElementById("prenom").value;
+	 let text2 = document.getElementById("nomdefamille").value;
+	 let text3 = text1.concat(" ",text2);
+	 document.getElementById("holder1").innerHTML = text3;
+}
+
+
+// exercice 2
+function segmentText() {
+    // on récupère le texte de l'élément d'id texte, on le découpe et on le place dans l'élément avec id holder2
+    // compléter le code ici
+	let text = document.getElementById("texte").value;
+	const mots = text.split(new RegExp("[ ,\"'.]"));
+	document.getElementById("holder2").innerHTML = mots;
+}
+
