@@ -42,3 +42,42 @@ window.onload = function segmentText() {
 	document.getElementByld("holder2).innerHTML=mots;
 }
 
+window.onload = function tokens() {
+import nltk
+
+text = text_segmentation
+tokens = nltk.word_tokenize(text)
+print(tokens)
+}
+
+window.onload = function globalTokens() {
+	import nltk
+	def tokenize_text(text):
+    global global_tokens
+    doc = nlp(text)
+    global_tokens = [token.text for token in doc]
+	tokenize_text(my_text)
+	print(global_tokens)
+}
+
+
+window.onload = function globalTokens() {
+def dictionnaire(tokens):
+    token_counts = Counter(global_tokens)
+
+    sorted_dict = dict(sorted(token_counts.items(), key=lambda x: x[1], reverse=True))
+    return sorted_dict
+
+my_dict = dictionnaire(global_tokens)
+print(my_dict)
+
+def Dictionnaire_click():
+    global tokens_entry, results_text
+    tokens = tokens_entry.get().split()
+	 results_text.delete("1.0", tk.END)
+    for key, value in my_dict.items():
+        results_text.insert(tk.END, f"{key}: {value}\n")
+}
+
+
+
