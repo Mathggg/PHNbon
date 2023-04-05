@@ -33,8 +33,10 @@ html {
 }
 
 #page  {
+	margin: auto; /* centrer */
 	position: relative;
 	min-height: 100%;
+	
 }
 
 #container {
@@ -83,5 +85,13 @@ html {
 h1 {
 	margin-top: 0;
 	color:black;
+}
+
+table, th, td {
+    border : 1px solid black;
+}
+
+.entete {
+    text-align: center;
 }
 
