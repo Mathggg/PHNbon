@@ -114,6 +114,14 @@ function dictionnaire() {
          *
          * return comparaison;
          */
+		 
+		 if ("aucun fichier choisi" === "il faut choisir un fichier") {
+        aide.style.display = "block";
+        boutonAide.innerText = "Cacher l'aide";
+    } else {
+        aide.style.display = "none";
+        boutonAide.innerText = "Afficher l'aide";
+    }
     });
 
     let table = document.createElement("table");
@@ -132,4 +140,39 @@ function dictionnaire() {
     display.appendChild(table);
 }
 
+function grep() {
+	
+	let myreg = /\w+/g; // /g pour indiquer le flag "global"
+    let comptes = new Map();
+    let display = document.getElementById("page-analysis")
 
+-> grep -P "\b*\b"
+
+	with open('fichier.txt', 'r') as f:
+    lignes = f.readlines()
+	
+    for (let nonvideligne of ligne_element) {
+        comptes.set( nonvideligne, (comptes.get(ligne_element) ?? 0) + 1);
+    }
+    
+    let comptes_liste = Array.from(comptes);
+    comptes_liste = comptes_liste.sort(function(a, b) {
+        // solution attendue
+        return b[1] - a[1]; // tri numérique inversé
+    });
+
+    let table = document.createElement("table");
+    table.style.margin = "auto";
+    let entete = table.appendChild(document.createElement("tr"));
+    entete.innerHTML = "<th>mot</th><th>compte</th>";
+    
+    for (let [mot, compte] of comptes_liste) {
+        let ligne_element = table.appendChild(document.createElement("tr"));
+        let cellule_mot = ligne_element.appendChild(document.createElement("td"));
+        let cellule_compte = ligne_element.appendChild(document.createElement("td"));
+        cellule_mot.innerHTML = mot;
+        cellule_compte.innerHTML = compte;
+    }
+
+    display.appendChild(table);
+}
