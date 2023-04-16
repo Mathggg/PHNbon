@@ -176,3 +176,36 @@ function grep() {
 
     display.appendChild(table);
 }
+
+function Concordancier() {
+            var text = document.getElementById("text").value;
+            if (text) {
+                var keyword = document.getElementById("keyword").value.trim();
+                if (keyword) {
+                    var context_length = document.getElementById("context_length").value.trim();
+                    if (context_length && !isNaN(context_length)) {
+                        context_length = parseInt(context_length);
+                        var concordance = [];
+                        var sentences = text.split(/[\.\?!]\s/);
+                        for (var i = 0; i < sentences.length; i++) {
+                            var words = sentences[i].split(/\s+/);
+                            for (var j = 0; j < words.length; j++) {
+                                if (words[j] == keyword) {
+                                    var start = Math.max(0, j - context_length);
+                                    var end = Math.min(words.length, j + context_length + 1);
+                                    var context = words.slice(start, end).join(' ');
+                                    concordance.push(context);
+                                }
+                            }
+                        }
+						
+					}
+				}
+			}
+}
+
+
+let table = document.createElement("tableau");
+    table.style.margin = "auto";
+    let entete = table.appendChild(document.createElement("tr"));
+    entete.innerHTML = "<th>mot</th><th>compte</th>";
