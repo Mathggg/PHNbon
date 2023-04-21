@@ -7,6 +7,15 @@
         <title>Le titre de la page.</title>
 		 <script type="text/javascript" language="javascript" src="assets/js/main.js"></script>
 		
+	<meta charset="utf-8">
+		<title>Exemple de la librairie Chartist</title>    
+
+		<!-- pour utiliser chartist, il faut télécharger les fichiers chartist.min.js et chartist.min.css -->
+		<!-- puis ajouter ces imports dans le HTML -->
+		<script type="text/javascript" src="assets/js/chartist.min.js"></script> 
+		<link rel="stylesheet" href="assets/css/chartist.min.css">
+
+		<script type="text/javascript" src="assets/js/exemple.js"></script>
     </head>
 
     <body>
@@ -71,18 +80,37 @@
 					
                     <button class="submit" onclick="dictionnaire();"><span>dictionnaire</span></button>
                     <button class="submit" onclick="grep();"><span>grep</span></button>
-                    <button class="submit" onclick="alert('Je ne fais rien, changez-moi !')"><span>action 3</span></button>
+                    <button class="submit" onclick="concordancier()"><span>concordancier</span></button>
                     <button class="submit" onclick="alert('Je ne fais rien, changez-moi !')"><span>action 4</span></button>
                     <button class="submit" onclick="alert('Je ne fais rien, changez-moi !')"><span>action 5</span></button>
                     <button class="submit" onclick="alert('Je ne fais rien, changez-moi !')"><span>action 6</span></button>
                 </p>
             </div>
+			<div id="page"> 
+
+		<div id="container">  
+		<h1>Exemple de la librairie Chartist</h1>
+
+		<div id="page-wrapper">
+		<button class="submit" onclick="graphiqueCamembert();"><span>Mots Fréquents(C)</span></button>
+		<button class="submit" onclick="graphiqueLigne();"><span>Mots Fréquents(L)</span></button>
+		<button class="submit" onclick="graphiqueBarres();"><span>Mots Fréquents(B)</span></button>
+		</div>
+
+		<div id="Global">    
+		<!-- pour que les graphiques s'affichent, il faut ajouter la class ct-chart à la div où les résultats sont affichés -->
+		<div id="page-analysis" class="ct-chart"></div>
+		</div>
+		</div>
+
+		</div>
+
 			
             <div id="logger" style="width:100%"></div>
             <br />
             <div id="Global">
                 <div id="fileDisplayArea"></div>
-                <div id="page-analysis"></div>
+                <div id="page-analysis" style="color:black" ></div>
             </div>
         </div>
         <div class="entete">
